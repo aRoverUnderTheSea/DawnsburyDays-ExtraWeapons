@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0-windows7.0</TargetFramework>
+        <RootNamespace>YALsExtraWeapons</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>YALsExtraWeapons</AssemblyName>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="Common">
+        <HintPath>$(DAWNSBURY_DAYS)\Data\Common.dll</HintPath>
+      </Reference>
+      <Reference Include="Dawnsbury Days">
+        <HintPath>$(DAWNSBURY_DAYS)\Data\Dawnsbury Days.dll</HintPath>
+      </Reference>
+      <Reference Include="MonoGame.Framework">
+        <HintPath>$(DAWNSBURY_DAYS)\Data\MonoGame.Framework.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Properties\" />
+    </ItemGroup>
+
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+      <Exec Command="cmd /C copy &quot;$(TargetPath)&quot; &quot;$(DAWNSBURY_DAYS)\CustomMods\$(TargetFileName)&quot;&#xD;&#xA;cmd /C copy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)export\CustomMods\$(TargetFileName)&quot;" />
+    </Target>
+
+</Project>
