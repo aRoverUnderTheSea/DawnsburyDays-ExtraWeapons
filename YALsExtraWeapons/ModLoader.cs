@@ -29,15 +29,16 @@ public class ModLoader {
 		// aside: the weapons here are ordered alphabetically
 
 		// a d8 thrown weapon! Ranged only tho
-		addSimpleWeapon("Chakram", new ModdedIllustration("YALsExtraWeapons/chakram.png"), [
-			Trait.Thrown,
-			Trait.Knife,
+		addSimpleWeapon("Bec de Corbin", new ModdedIllustration("YALsExtraWeapons/chakram.png"), [
+			Trait.Shove,
+			Trait.Razing,
+			Trait.Concussive,
+			Trait.Reach,
+			Trait.Polearm,
 			Trait.Martial,
-			Trait.RogueWeapon,
 		], item => (item
 			.WithWeaponProperties(
-				new WeaponProperties("1d8", DamageKind.Slashing)
-				.WithRangeIncrement(4)
+				new WeaponProperties("1d8", DamageKind.Piercing)
 			)
 		), [
 			"Simple, elegant, and portable, the chakram is an open-centered metal discus with a sharpened edge,",
